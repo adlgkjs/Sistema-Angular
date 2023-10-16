@@ -1,0 +1,71 @@
+  <!-- Este es el formulario -->
+  <div class="container">
+    <div class="col" style="text-align: center">
+      <h1>{{titulo}}</h1> <!--titulo es la variable que declare en el archivo app.components.ts-->
+    </div>
+      <br><br>
+  
+      <form action="" class="form-group row">
+        <div class="form-group col-md-3">
+          <label for="nombre">Nombre</label>
+          <!-- Con el [(ngModel)] puedo captar lo que se capture en este campo -->
+          <input [(ngModel)]="inputNombre" class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre">
+  
+        </div>
+        <div class="form-group col-md-3">
+          <label for="apellido">Apellido</label>
+          <!-- Con el [(ngModel)] puedo captar lo que se capture en este campo -->
+          <input [(ngModel)]="inputApellido" class="form-control" type="text" name="apellido" id="apellido" placeholder="Apellido">
+  
+        </div>
+        <div class="form-group col-md-3">
+          <label for="puesto">Puesto</label>
+          <!-- Con el [(ngModel)] puedo captar lo que se capture en este campo -->
+          <input [(ngModel)]="inputPuesto" class="form-control" type="text" name="puesto" id="puesto" placeholder="Puesto">
+  
+        </div>
+        <div class="form-group col-md-3">
+          <label for="sueldo">Sueldo</label>
+          <!-- Con el [(ngModel)] puedo captar lo que se capture en este campo -->
+          <input [(ngModel)]="inputSueldo" class="form-control" type="number" name="sueldo" id="sueldo" placeholder="Sueldo">
+        </div>
+        
+        <div class="col">
+          <!-- El boton tiene que ser de tipo submit para que envie la informacion -->
+          <button type="submit" class="btn btn-primary" style="margin-top: 20px;" (click)="agregarRegistro()">Registrar</button> <!--Con (click) estoy diciendo que cuando se de click sobre el boton se va a llamar a la funcion "agregarRegistro"-->
+        </div>
+  
+  
+      </form>
+  </div>
+  <br><br><br>
+  
+  <!--Aqui inserto el componente hijo-->
+  <!-- Parece ser que app.component.html se comunica con app.component.ts que a su vez se comunica con empleado.model.ts -->
+  <!--empleados hace referencia a la variable con el mismo nombre del archivo app.components.ts-->
+  <!-- *ngFor es como un bucle For-Each -->             <!--Le doy nombres identificativos a la variable empleado e i para poder hacer referencia a ellas en el html del componente hijo-->
+  <app-componente-hijo *ngFor="let empleado of empleados; let i=index" [empleadoIterado]="empleado" [indice]="i"></app-componente-hijo> <!--De esta forma se inserta un componente hijo-->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

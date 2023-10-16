@@ -1,0 +1,36 @@
+<p>proyectos-component works!</p>
+
+<form action="" class="form-group row">
+    <div class="form-group col-md-3">
+      <label for="nombre">Nombre</label>
+      <!-- Con el [(ngModel)] puedo captar lo que se capture en este campo -->
+      <input [(ngModel)]="inputNombre" class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre">
+
+    </div>
+    <div class="form-group col-md-3">
+      <label for="apellido">Apellido</label>
+      <!-- Con el [(ngModel)] puedo captar lo que se capture en este campo -->
+      <input [(ngModel)]="inputApellido" class="form-control" type="text" name="apellido" id="apellido" placeholder="Apellido">
+
+    </div>
+    <div class="form-group col-md-3">
+      <label for="puesto">Puesto</label>
+      <!-- Con el [(ngModel)] puedo captar lo que se capture en este campo -->
+      <input [(ngModel)]="inputPuesto" class="form-control" type="text" name="puesto" id="puesto" placeholder="Puesto">
+
+    </div>
+    <div class="form-group col-md-3">
+      <label for="sueldo">Sueldo</label>
+      <!-- Con el [(ngModel)] puedo captar lo que se capture en este campo -->
+      <input [(ngModel)]="inputSueldo" class="form-control" type="number" name="sueldo" id="sueldo" placeholder="Sueldo">
+    </div>
+    
+    <div class="col">
+      <!-- El boton tiene que ser de tipo submit para que envie la informacion -->
+      <button type="submit" class="btn btn-primary" style="margin-top: 20px;" (click)="agregarRegistro()">Registrar</button> <!--Con (click) estoy diciendo que cuando se de click sobre el boton se va a llamar a la funcion "agregarRegistro"-->
+    </div>
+  </form>
+
+<div style="text-align: center;">
+    <button class="btn btn-primary" type="submit" (click)="irHome()">Ir a Home</button>
+</div>

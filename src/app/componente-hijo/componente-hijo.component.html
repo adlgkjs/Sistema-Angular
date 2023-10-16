@@ -1,0 +1,41 @@
+<!-- Aqui muestro los registros -->
+<div class="container">
+    <div class="row">
+      <div class="col">
+        
+        
+<!--indice es el nombre identificador que importe en el componente-hijo.component.ts que a su vez importe del html del componente principal (app.component.html)-->
+        <div>  <!--empleadoIterado es el nombre identificado que importe en el archivo componente-hijo.component.ts-->         
+          {{indice+1}} {{empleadoIterado.nombre}} {{empleadoIterado.apellido}} {{empleadoIterado.cargo}} {{empleadoIterado.salario}}
+          
+          <!--Con routerLink se hace un href en Angular, agregando el indice puedo enviar el indice del elemento en la url-->
+          <a [routerLink]="['/actualizar',indice]" [queryParams]="{accionQueryParams:'actualizar'}"> <!--queryParams me permite enviar el dato que yo quiera por la url-->
+            Actualizar
+          </a>
+
+          &nbsp; <!--Esto hace un espacios horizontales-->
+
+          <a [routerLink]="['/actualizar',indice]" [queryParams]="{accionQueryParams:'eliminar'}"> <!--queryParams me permite enviar el dato que yo quiera por la url y nombrarlo como quiera, en este caso lo llame accionQueryParams-->
+            Eliminar
+          </a>
+          </div>
+        
+        <ul style="list-style: none;"> <!--Lista desordenada-->
+          <li *ngFor="let caracteristica of caracteristicas">{{caracteristica}}</li>
+        </ul>
+
+         <app-caracteristicas-empleado (caracteristicasEmpleados)="agregarCaracteristica($event)"></app-caracteristicas-empleado> <!--Con esto inserto el contenido del html hijo-->
+      
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
